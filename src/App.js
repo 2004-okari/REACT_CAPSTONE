@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 import Mission from './components/Mission';
 import Profile from './components/Profile';
 import Rocket from './components/Rocket';
@@ -10,9 +10,9 @@ function App() {
     <>
       <Navigation />
       <Routes>
-        <Route path='/' element={<Rocket />} />
-        <Route path='/mission' element={<Mission />} />
-        <Route path='/profile' element={<Profile />} />
+        <Route path="/" element={<Rocket />} />
+        <Route path="/mission" element={<Mission />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </>
   );
