@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleReservation } from '../redux/rocket/rocketSlice';
+import { fetchRockets, toggleReservation } from '../redux/rocket/rocketSlice';
 import './rocket.css';
 
 function Rocket() {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets.rockets);
   const { status, error } = useSelector((state) => state.rockets);
+
+  useEffect(() => {
+    dispatch(fetchRockets());
+  }, []);
 
   const handleReservationToggle = (rocketId) => {
     dispatch(toggleReservation(rocketId));
