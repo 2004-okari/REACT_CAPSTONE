@@ -34,7 +34,6 @@ const spaceXSlice = createSlice({
           ...mission,
           reserved: false,
         }));
-        console.log(state.missions);
       })
       .addCase(fetchMissions.rejected, (state, action) => {
         state.status = 'failed';
@@ -42,7 +41,6 @@ const spaceXSlice = createSlice({
       });
   },
 });
-
 
 export const { toggleReservation } = spaceXSlice.actions;
 export default spaceXSlice.reducer;
