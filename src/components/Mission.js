@@ -10,7 +10,7 @@ function Mission() {
 
   useEffect(() => {
     dispatch(fetchMissions());
-  }, [dispatch]);
+  }, []);
 
   const handleReservationToggle = (missionId) => {
     dispatch(toggleReservation(missionId));
