@@ -9,6 +9,7 @@ function Mission() {
   const { status, error } = useSelector((state) => state.missions);
 
   useEffect(() => {
+    console.log("Fetching ...")
     dispatch(fetchMissions());
   }, []);
 
