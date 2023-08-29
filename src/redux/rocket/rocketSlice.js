@@ -12,7 +12,6 @@ const initialState = {
 export const fetchRockets = createAsyncThunk('rockets/fetchRockets', async () => {
   try {
     const response = await axios.get(rocketsUrl);
-    console.log(response.data);
     return response.data;
   } catch (error) {
     throw new Error('Fetch Rocket failed');
@@ -24,18 +23,15 @@ const rocketSlice = createSlice({
   initialState,
   reducers: {
     toggleReservation: (state, { payload }) => {
-      const newState = [...state.rockets];
-      newState.map((rocket) => {
-        if (rocket.id === payload) {
-          rocket.reserved = !rocket.reserved;
-        }
-        return rocket;
-      });
+      const rocketToUpdate = state.rockets.find((rocket) => rocket.id === payload);
+      if (rocketToUpdate) {
+        rocketToUpdate.reserved = !rocketToUpdate.reserved;
+      }
     },
-    populateProfile: (state) => {
-      const newState = [...state.filter((rocket) => rocket.reserved)];
-      return { ...state, rockets: newState };
-    },
+    populateProfile: (state) => ({
+      ...state,
+      rockets: state.rockets.filter((rocket) => rocket.reserved),
+    }),
   },
   extraReducers(builder) {
     builder
@@ -48,6 +44,7 @@ const rocketSlice = createSlice({
           name: rocket.name,
           description: rocket.description,
           flickr_images: rocket.flickr_images,
+          reserved: false,
         }));
         return {
           ...state,
