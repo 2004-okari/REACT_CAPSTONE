@@ -21,24 +21,24 @@ function Mission() {
   
   return (
     <>
-      {status === 'loading' ? (<span className="loader"></span>) : ''}
+      {status === 'loading' ? (<span class="loader">Load&nbsp;ng</span>) : ''}
       {status === 'failed' ? (<span>Error: {error}</span>) : ''}
-      <table>
-        <thead>
-          <tr>
-            <td>Mission</td>
-            <td>Description</td>
-            <td>Status</td>
-            <td>Join/Cancel</td>
+      <table className='table'>
+        <thead className='thead'>
+          <tr className='thead-row'>
+            <td className='thead-title'>Mission</td>
+            <td className='thead-title'>Description</td>
+            <td className='thead-title'>Status</td>
+            <td className='thead-title'></td>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='tbody'>
           {missions.map(mission => (
-            <tr key={mission.mission_id}>
-              <td>{mission.mission_name}</td>
-              <td>{mission.description}</td>
-              <td>{!mission.reserved ? (<button>Not a member</button>) : (<button>Active member</button>)}</td>
-              <td><button type='button' onClick={() => handleReservationToggle(mission.mission_id)}>{!mission.reserved ? "Join a mission" : "Leave mission"}</button></td>
+            <tr key={mission.mission_id} className='tbody-row'>
+              <td className='mission-text'>{mission.mission_name}</td>
+              <td className='mission-text'>{mission.description}</td>
+              <td className='btn-status'>{!mission.reserved ? (<p className='not'>NOT A MEMBER</p>) : (<p className='member'>Active member</p>)}</td>
+              <td className='mission-text'><button className={mission.reserved ? "cancel-btn" : "reserve-btn"} type='button' onClick={() => handleReservationToggle(mission.mission_id)}>{!mission.reserved ? "Join a mission" : "Leave mission"}</button></td>
             </tr>
           ))}
         </tbody>
