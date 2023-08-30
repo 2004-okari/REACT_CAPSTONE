@@ -1,0 +1,53 @@
+.rocket-wrapper {
+  padding: 20px 10%;
+}
+
+ul.rocketList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.rocketList li {
+  display: flex;
+  gap: 1em;
+}
+
+img.rocketImage {
+  width: 20em;
+}
+
+span.reserve {
+  background-color: #00bcd4;
+  color: white;
+  padding: 2px;
+  font-size: 0.75em;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.rocket-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.rocket-info p {
+  line-height: 1.25em;
+}
+
+button.reservationBtn {
+  width: fit-content;
+  padding: 10px;
+  background-color: #0290ff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+button.reservationBtn.reserved {
+  background-color: white;
+  color: #4f4f4f;
+  border: 1px solid #4f4f4f;
+}
