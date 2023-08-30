@@ -12,7 +12,7 @@ function Navigation() {
       </div>
       <div className="list-div">
         <ul className="list">
-          <li className="list-item"><NavLink className="list-nav" to="/">Rocket</NavLink></li>
+          <li className="list-item"><NavLink activeClassName="active" className="list-nav" to="/">Rocket</NavLink></li>
           <li className="list-item"><NavLink className="list-nav" to="/mission">Mission</NavLink></li>
           <li className="list-item"><NavLink className="list-nav" to="/profile">Profile</NavLink></li>
         </ul>
