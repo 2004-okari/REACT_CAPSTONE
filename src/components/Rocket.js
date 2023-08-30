@@ -10,7 +10,7 @@ function Rocket() {
 
   useEffect(() => {
     dispatch(fetchRockets());
-  }, []);
+  }, [dispatch]);
 
   const handleReservationToggle = (rocketId) => {
     dispatch(toggleReservation(rocketId));
