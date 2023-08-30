@@ -1,16 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions, toggleReservation } from '../redux/mission/missionSlice';
+import { toggleReservation } from '../redux/mission/missionSlice';
 import './mission.css';
 
 function Mission() {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions.missions);
   const { status, error } = useSelector((state) => state.missions);
-
-  useEffect(() => {
-    dispatch(fetchMissions());
-  }, [dispatch]);
 
   const handleReservationToggle = (missionId) => {
     dispatch(toggleReservation(missionId));
