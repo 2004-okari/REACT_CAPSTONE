@@ -42,3 +42,7 @@
     }
   }
 }
+
+a.list-nav.active {
+  border-bottom: 1px solid #068fff;
+}
