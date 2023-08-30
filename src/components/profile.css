@@ -1,0 +1,30 @@
+.profile-container {
+    padding: 20px 10%;
+    display: flex;
+    justify-content: center;
+    gap: 4em;
+    flex-wrap: wrap;
+}
+
+section {
+    width: 40%;
+}
+
+section h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+ul.lists li {
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+section ul.lists {
+    list-style: none;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+ul.lists li:last-child {
+    border: none;
+}
