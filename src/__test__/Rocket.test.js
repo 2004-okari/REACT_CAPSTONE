@@ -1,10 +1,10 @@
 import React from 'react';
-import { render, screen  } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
-import Rocket from '../components/Rocket';
 import configureStore from 'redux-mock-store';
+import Rocket from '../components/Rocket';
 
 const mockStore = configureStore([]);
 
@@ -13,19 +13,23 @@ describe('Rocket component', () => {
     const initialState = {
       rockets: {
         rockets: [
-        { id: 1, name: 'Rocket 1', description: 'Rocket 1 description', reserved: true },
-        { id: 2, name: 'Rocket 2', description: 'Rocket 2 description', reserved: false },
-      ],
-      status: "idle",
-      error: null
-    }
-  }
+          {
+            id: 1, name: 'Rocket 1', description: 'Rocket 1 description', reserved: true,
+          },
+          {
+            id: 2, name: 'Rocket 2', description: 'Rocket 2 description', reserved: false,
+          },
+        ],
+        status: 'idle',
+        error: null,
+      },
+    };
 
     const store = mockStore(initialState);
     render(
       <Provider store={store}>
         <Rocket />
-      </Provider>
+      </Provider>,
     );
 
     const rocket1NameElement = screen.getByText('Rocket 1');
@@ -47,19 +51,23 @@ describe('Rocket component', () => {
     const initialState = {
       rockets: {
         rockets: [
-        { id: 1, name: 'Rocket 1', description: 'Rocket 1 description', reserved: true },
-        { id: 2, name: 'Rocket 2', description: 'Rocket 2 description', reserved: false },
-      ],
-      status: "idle",
-      error: null
-    }
-  }
+          {
+            id: 1, name: 'Rocket 1', description: 'Rocket 1 description', reserved: true,
+          },
+          {
+            id: 2, name: 'Rocket 2', description: 'Rocket 2 description', reserved: false,
+          },
+        ],
+        status: 'idle',
+        error: null,
+      },
+    };
 
     const store = mockStore(initialState);
-     const tree = renderer.create(
+    const tree = renderer.create(
       <Provider store={store}>
         <Rocket />
-      </Provider>
+      </Provider>,
     ).toJSON;
 
     expect(tree).toMatchSnapshot();

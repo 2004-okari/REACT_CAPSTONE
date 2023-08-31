@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Profile from '../components/Profile';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
+import Profile from '../components/Profile';
 
 const mockStore = configureMockStore([]);
 
@@ -20,7 +20,7 @@ test('Profile component matches snapshot', () => {
     .create(
       <Provider store={store}>
         <Profile />
-      </Provider>
+      </Provider>,
     )
     .toJSON();
 

@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
-import Mission from '../components/Mission';
 import configureStore from 'redux-mock-store';
+import Mission from '../components/Mission';
 import '@testing-library/jest-dom/extend-expect';
 
 const mockStore = configureStore([]);
@@ -27,7 +27,7 @@ test('renders mission component', () => {
   render(
     <Provider store={store}>
       <Mission />
-    </Provider>
+    </Provider>,
   );
 
   const missionNameElement = screen.getByText('Mission 1');
@@ -56,9 +56,8 @@ test('mission component matches snapshot', () => {
   const tree = renderer.create(
     <Provider store={store}>
       <Mission />
-    </Provider>
+    </Provider>,
   ).toJSON();
 
-  
   expect(tree).toMatchSnapshot();
 });
