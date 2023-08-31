@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen  } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
+import renderer from 'react-test-renderer';
 import Rocket from '../components/Rocket';
 import configureStore from 'redux-mock-store';
 
@@ -40,5 +41,27 @@ describe('Rocket component', () => {
     expect(rocket2DescriptionElement).toBeInTheDocument();
     expect(reserveButton1).toBeInTheDocument();
     expect(reserveButton2).toBeInTheDocument();
+  });
+
+  test('rockets component matches snapshot', () => {
+    const initialState = {
+      rockets: {
+        rockets: [
+        { id: 1, name: 'Rocket 1', description: 'Rocket 1 description', reserved: true },
+        { id: 2, name: 'Rocket 2', description: 'Rocket 2 description', reserved: false },
+      ],
+      status: "idle",
+      error: null
+    }
+  }
+
+    const store = mockStore(initialState);
+     const tree = renderer.create(
+      <Provider store={store}>
+        <Rocket />
+      </Provider>
+    ).toJSON;
+
+    expect(tree).toMatchSnapshot();
   });
 });

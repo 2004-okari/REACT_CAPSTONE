@@ -24,7 +24,6 @@ describe('Navbar component', () => {
       const missionLink = getByText('Mission');
       const profileLink = getByText('Profile');
   
-      // Check if clicking the links navigates to the correct routes
       expect(rocketLink.getAttribute('href')).toBe('/');
       expect(missionLink.getAttribute('href')).toBe('/mission');
       expect(profileLink.getAttribute('href')).toBe('/profile');

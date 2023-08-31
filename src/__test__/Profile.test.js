@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Profile from '../components/Profile'; // Adjust the path
+import Profile from '../components/Profile';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 
