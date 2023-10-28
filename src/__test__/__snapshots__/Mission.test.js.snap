@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mission component matches snapshot 1`] = `
+<table
+  className="table"
+>
+  <thead
+    className="thead"
+  >
+    <tr
+      className="thead-row"
+    >
+      <td
+        className="thead-title"
+      >
+        Mission
+      </td>
+      <td
+        className="thead-title"
+      >
+        Description
+      </td>
+      <td
+        className="thead-title"
+      >
+        Status
+      </td>
+      <td
+        aria-label="join"
+        className="thead-title"
+      />
+    </tr>
+  </thead>
+  <tbody
+    className="tbody"
+  >
+    <tr
+      className="tbody-row"
+    >
+      <td
+        className="mission-text"
+      >
+        Mission 1
+      </td>
+      <td
+        className="mission-text"
+      >
+        Mission 1 description
+      </td>
+      <td
+        className="btn-status"
+      >
+        <p
+          className="not"
+        >
+          NOT A MEMBER
+        </p>
+      </td>
+      <td
+        className="mission-text"
+      >
+        <button
+          className="reserve-btn"
+          onClick={[Function]}
+          type="button"
+        >
+          Join a mission
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

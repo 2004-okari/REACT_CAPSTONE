@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 4%;
+  align-items: center;
+  border-bottom: 1px solid #494949;
+
+  .image-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .text {
+      margin-left: 30px;
+    }
+  }
+
+  .list-div {
+    .list {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      list-style: none;
+
+      .list-item {
+        margin: 10px;
+
+        .list-nav {
+          text-decoration: none;
+          color: #068fff;
+        }
+      }
+    }
+  }
+}
+
+a.list-nav.active {
+  border-bottom: 1px solid #068fff;
+}
